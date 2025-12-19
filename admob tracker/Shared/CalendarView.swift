@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CalendarView: View {
     @ObservedObject var dataService = DataService.shared
+    @ObservedObject var interstitialAdManager = InterstitialAdManager.shared
     
     // Paging State
     @State private var currentPageIndex: Int = 0
@@ -137,6 +138,10 @@ struct CalendarView: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .onChange(of: currentPageIndex) {
+                    // Track swipe for interstitial ad
+                    interstitialAdManager.trackSwipe()
+                }
                 
                 // Banner Ad at Bottom
                 BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
