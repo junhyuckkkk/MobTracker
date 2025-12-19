@@ -6,27 +6,38 @@
 //
 
 import SwiftUI
-import SwiftData
+#if canImport(GoogleSignIn)
+import GoogleSignIn
+#endif
 
 @main
 struct admob_trackerApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+    // Initialize services when app starts
+    init() {
+        // Request notification permission
+        NotificationService.shared.requestPermission { granted in
+            if granted {
+                print("Notifications enabled")
+            }
         }
-    }()
-
+    }
+    
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { url in
+                    #if canImport(GoogleSignIn)
+                    GIDSignIn.sharedInstance.handle(url)
+                    #endif
+                }
+                .onChange(of: scenePhase) {
+                    if scenePhase == .active {
+                        print("App became active, refreshing data...")
+                        DataService.shared.refreshData()
+                    }
+                }
         }
-        .modelContainer(sharedModelContainer)
     }
 }

@@ -1,0 +1,49 @@
+/* English */
+"dashboard_title" = "MobTracker";
+"today_earnings" = "Today's Earnings";
+"yesterday" = "Yesterday";
+"this_month" = "This Month";
+"last_month" = "Last Month";
+"booster_mode" = "Boost Mode";
+"booster_on" = "BOOST ON";
+"active" = "Active";
+"activate_booster" = "Activate Boost";
+"booster_desc" = "Activate Boost Mode to enjoy real-time widget updates for 24 hours.";
+"sign_in_google" = "Sign in with Google";
+"app_subtitle" = "Track your earnings in real-time";
+"login_disclaimer" = "By signing in, you allow this app to read your AdMob earnings data.";
+"refresh_earnings" = "Refresh Earnings";
+"vs_yesterday" = "vs yesterday";
+
+/* Tab Bar & Menu */
+"tab_home" = "Home";
+"tab_calendar" = "Calendar";
+"tab_menu" = "Menu";
+"monthly_total" = "Monthly Total";
+"today" = "Today";
+"select_year" = "Select Year";
+"select_month" = "Select Month";
+"account_info" = "Account Info";
+"publisher_id" = "Publisher ID";
+"logout" = "Sign Out";
+"version" = "Version";
+"help_guide" = "Help & Guide";
+"widget_setup" = "How to setup Widget";
+"widget_setup_desc" = "Long press Home Screen, tap +, and select AdMob Widget.";
+"contact_support" = "Contact Support";
+"monthly_comparison" = "Weekly Comparison";
+"weekly_comparison" = "Weekly Comparison";
+
+/* Developer Options */
+"developer_options" = "Developer Options";
+"reset_booster_status" = "Reset Boost Status";
+
+/* Widget */
+"widget_locked_title" = "Boost Mode";
+"widget_locked_desc" = "Activate Boost Mode to see real-time earnings";
+"total_year" = "Total %@";
+"vs_prev_year" = "vs %@";
+
+/* Notifications */
+"notification_title" = "📊 Check Today's Earnings";
+"notification_body" = "Great job today! Let's check your revenue.";

@@ -6,56 +6,87 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @ObservedObject var authService = AuthService.shared
+    
+    // Custom Tab Bar Appearance
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(Color.slate800)
+        
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
+    @State private var selection = 0
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        Group {
+            if authService.isAuthenticated {
+                // Custom Binding for Tab Selection
+                let binding = Binding<Int>(
+                    get: { self.selection },
+                    set: { newValue in
+                        // Haptic Feedback for any tab tap
+                        HapticManager.instance.impact(style: .light)
+                        
+                        if newValue == self.selection {
+                            if newValue == 0 {
+                                // Tapped Home again -> Refresh & Scroll to Top
+                                print("Home tab tapped again, refreshing and scrolling up...")
+                                DataService.shared.refreshData()
+                                NotificationCenter.default.post(name: Notification.Name("ScrollToTop"), object: nil)
+                            } else if newValue == 1 {
+                                // Tapped Calendar again -> Reset to Today
+                                print("Calendar tab tapped again, resetting...")
+                                NotificationCenter.default.post(name: Notification.Name("ResetCalendar"), object: nil)
+                            }
+                        }
+                        self.selection = newValue
                     }
+                )
+                
+                TabView(selection: binding) {
+                    HomeView()
+                        .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("tab_home")
+                        }
+                        .tag(0)
+                    
+                    CalendarView()
+                        .tabItem {
+                            Image(systemName: "calendar")
+                            Text("tab_calendar")
+                        }
+                        .tag(1)
+                    
+                    MenuView()
+                        .tabItem {
+                            Image(systemName: "line.3.horizontal")
+                            Text("tab_menu")
+                        }
+                        .tag(2)
                 }
-                .onDelete(perform: deleteItems)
+                .accentColor(.admobBlue)
+            } else {
+                LoginView()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+        .animation(.easeInOut, value: authService.isAuthenticated)
+        .onChange(of: authService.isAuthenticated) {
+            if authService.isAuthenticated {
+                selection = 0
             }
         }
     }
 }
+
+
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
+

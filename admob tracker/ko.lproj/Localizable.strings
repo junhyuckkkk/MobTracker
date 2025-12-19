@@ -1,0 +1,49 @@
+/* Korean (Default) */
+"dashboard_title" = "MobTracker";
+"today_earnings" = "오늘의 수익";
+"yesterday" = "어제";
+"this_month" = "이번 달";
+"last_month" = "지난 달";
+"booster_mode" = "부스트 모드";
+"booster_on" = "부스트 ON";
+"active" = "활성";
+"activate_booster" = "부스트 활성화";
+"booster_desc" = "부스트 모드를 활성화하여 24시간 동안 실시간 위젯 업데이트를 이용하세요.";
+"sign_in_google" = "Google로 로그인";
+"app_subtitle" = "실시간으로 수익을 확인하세요";
+"login_disclaimer" = "로그인하면 앱이 AdMob 수익 데이터를 읽을 수 있도록 허용하게 됩니다.";
+"refresh_earnings" = "수익 새로고침";
+"vs_yesterday" = "어제 대비";
+
+/* Tab Bar & Menu */
+"tab_home" = "홈";
+"tab_calendar" = "캘린더";
+"tab_menu" = "메뉴";
+"monthly_total" = "월간 총 수익";
+"today" = "오늘";
+"select_year" = "연도 선택";
+"select_month" = "월 선택";
+"account_info" = "계정 정보";
+"publisher_id" = "게시자 ID";
+"logout" = "로그아웃";
+"version" = "버전";
+"help_guide" = "도움말";
+"widget_setup" = "위젯 설정 방법";
+"widget_setup_desc" = "홈 화면을 길게 누르고 + 버튼을 눌러 AdMob 위젯을 추가하세요.";
+"contact_support" = "문의하기";
+"monthly_comparison" = "주간별 수익 비교";
+"weekly_comparison" = "주간별 수익 비교";
+
+/* Developer Options */
+"developer_options" = "개발자 옵션";
+"reset_booster_status" = "부스트 상태 초기화";
+
+/* Widget */
+"widget_locked_title" = "부스트 모드";
+"widget_locked_desc" = "부스트 모드를 활성화해서 실시간 수익을 확인하세요";
+"total_year" = "%@년 합계";
+"vs_prev_year" = "%@년 대비";
+
+/* Notifications */
+"notification_title" = "📊 오늘의 수익 확인";
+"notification_body" = "오늘 하루도 수고했어요! 수익을 확인해볼까요?";

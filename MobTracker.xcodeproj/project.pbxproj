@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		17748B2D2EDDDAE1003EF960 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17748B2C2EDDDAE1003EF960 /* WidgetKit.framework */; };
+		17748B2F2EDDDAE1003EF960 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17748B2E2EDDDAE1003EF960 /* SwiftUI.framework */; };
+		17748B402EDDDAE1003EF960 /* AdmobWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 17748B2A2EDDDAE0003EF960 /* AdmobWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		17CC0CBB2EDF1F9400E584F0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 17CC0CBA2EDF1F9400E584F0 /* GoogleSignIn */; };
+		17F090C82EE08E3900A29D01 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 17F090C72EE08E3900A29D01 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		17748AF92EDDD416003EF960 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,17 +29,65 @@
 			remoteGlobalIDString = 17748AE82EDDD416003EF960;
 			remoteInfo = "admob tracker";
 		};
+		17748B3E2EDDDAE1003EF960 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17748AE12EDDD415003EF960 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17748B292EDDDAE0003EF960;
+			remoteInfo = AdmobWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17748B452EDDDAE2003EF960 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				17748B402EDDDAE1003EF960 /* AdmobWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		17748AE92EDDD416003EF960 /* admob tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "admob tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17748AF82EDDD416003EF960 /* admob trackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "admob trackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17748B022EDDD416003EF960 /* admob trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "admob trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17748AE92EDDD416003EF960 /* MobTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17748AF82EDDD416003EF960 /* MobTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17748B022EDDD416003EF960 /* MobTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17748B2A2EDDDAE0003EF960 /* AdmobWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AdmobWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		17748B2C2EDDDAE1003EF960 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		17748B2E2EDDDAE1003EF960 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		17CC0CBD2EDF26FE00E584F0 /* AdmobWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdmobWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		17748B442EDDDAE2003EF960 /* Exceptions for "AdmobWidget" folder in "AdmobWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */;
+		};
+		17748B492EDDDC50003EF960 /* Exceptions for "admob tracker" folder in "AdmobWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Shared/AdMobAPI.swift,
+				Shared/AuthService.swift,
+				Shared/DataService.swift,
+				Shared/DesignSystem.swift,
+			);
+			target = 17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		17748AEB2EDDD416003EF960 /* admob tracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				17748B492EDDDC50003EF960 /* Exceptions for "admob tracker" folder in "AdmobWidgetExtension" target */,
+			);
 			path = "admob tracker";
 			sourceTree = "<group>";
 		};
@@ -45,6 +101,14 @@
 			path = "admob trackerUITests";
 			sourceTree = "<group>";
 		};
+		17748B302EDDDAE1003EF960 /* AdmobWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				17748B442EDDDAE2003EF960 /* Exceptions for "AdmobWidget" folder in "AdmobWidgetExtension" target */,
+			);
+			path = AdmobWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F090C82EE08E3900A29D01 /* GoogleMobileAds in Frameworks */,
+				17CC0CBB2EDF1F9400E584F0 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,15 +135,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17748B272EDDDAE0003EF960 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17748B2F2EDDDAE1003EF960 /* SwiftUI.framework in Frameworks */,
+				17748B2D2EDDDAE1003EF960 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		17748AE02EDDD415003EF960 = {
 			isa = PBXGroup;
 			children = (
+				17CC0CBD2EDF26FE00E584F0 /* AdmobWidgetExtension.entitlements */,
 				17748AEB2EDDD416003EF960 /* admob tracker */,
 				17748AFB2EDDD416003EF960 /* admob trackerTests */,
 				17748B052EDDD416003EF960 /* admob trackerUITests */,
+				17748B302EDDDAE1003EF960 /* AdmobWidget */,
+				17748B2B2EDDDAE1003EF960 /* Frameworks */,
 				17748AEA2EDDD416003EF960 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,41 +163,55 @@
 		17748AEA2EDDD416003EF960 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17748AE92EDDD416003EF960 /* admob tracker.app */,
-				17748AF82EDDD416003EF960 /* admob trackerTests.xctest */,
-				17748B022EDDD416003EF960 /* admob trackerUITests.xctest */,
+				17748AE92EDDD416003EF960 /* MobTracker.app */,
+				17748AF82EDDD416003EF960 /* MobTrackerTests.xctest */,
+				17748B022EDDD416003EF960 /* MobTrackerUITests.xctest */,
+				17748B2A2EDDDAE0003EF960 /* AdmobWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		17748B2B2EDDDAE1003EF960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17748B2C2EDDDAE1003EF960 /* WidgetKit.framework */,
+				17748B2E2EDDDAE1003EF960 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17748AE82EDDD416003EF960 /* admob tracker */ = {
+		17748AE82EDDD416003EF960 /* MobTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17748B0C2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob tracker" */;
+			buildConfigurationList = 17748B0C2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTracker" */;
 			buildPhases = (
 				17748AE52EDDD416003EF960 /* Sources */,
 				17748AE62EDDD416003EF960 /* Frameworks */,
 				17748AE72EDDD416003EF960 /* Resources */,
+				17748B452EDDDAE2003EF960 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				17748B3F2EDDDAE1003EF960 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				17748AEB2EDDD416003EF960 /* admob tracker */,
 			);
-			name = "admob tracker";
+			name = MobTracker;
 			packageProductDependencies = (
+				17CC0CBA2EDF1F9400E584F0 /* GoogleSignIn */,
+				17F090C72EE08E3900A29D01 /* GoogleMobileAds */,
 			);
 			productName = "admob tracker";
-			productReference = 17748AE92EDDD416003EF960 /* admob tracker.app */;
+			productReference = 17748AE92EDDD416003EF960 /* MobTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17748AF72EDDD416003EF960 /* admob trackerTests */ = {
+		17748AF72EDDD416003EF960 /* MobTrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17748B0F2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob trackerTests" */;
+			buildConfigurationList = 17748B0F2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTrackerTests" */;
 			buildPhases = (
 				17748AF42EDDD416003EF960 /* Sources */,
 				17748AF52EDDD416003EF960 /* Frameworks */,
@@ -133,16 +225,16 @@
 			fileSystemSynchronizedGroups = (
 				17748AFB2EDDD416003EF960 /* admob trackerTests */,
 			);
-			name = "admob trackerTests";
+			name = MobTrackerTests;
 			packageProductDependencies = (
 			);
 			productName = "admob trackerTests";
-			productReference = 17748AF82EDDD416003EF960 /* admob trackerTests.xctest */;
+			productReference = 17748AF82EDDD416003EF960 /* MobTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17748B012EDDD416003EF960 /* admob trackerUITests */ = {
+		17748B012EDDD416003EF960 /* MobTrackerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17748B122EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob trackerUITests" */;
+			buildConfigurationList = 17748B122EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTrackerUITests" */;
 			buildPhases = (
 				17748AFE2EDDD416003EF960 /* Sources */,
 				17748AFF2EDDD416003EF960 /* Frameworks */,
@@ -156,12 +248,34 @@
 			fileSystemSynchronizedGroups = (
 				17748B052EDDD416003EF960 /* admob trackerUITests */,
 			);
-			name = "admob trackerUITests";
+			name = MobTrackerUITests;
 			packageProductDependencies = (
 			);
 			productName = "admob trackerUITests";
-			productReference = 17748B022EDDD416003EF960 /* admob trackerUITests.xctest */;
+			productReference = 17748B022EDDD416003EF960 /* MobTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17748B412EDDDAE2003EF960 /* Build configuration list for PBXNativeTarget "AdmobWidgetExtension" */;
+			buildPhases = (
+				17748B262EDDDAE0003EF960 /* Sources */,
+				17748B272EDDDAE0003EF960 /* Frameworks */,
+				17748B282EDDDAE0003EF960 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				17748B302EDDDAE1003EF960 /* AdmobWidget */,
+			);
+			name = AdmobWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = AdmobWidgetExtension;
+			productReference = 17748B2A2EDDDAE0003EF960 /* AdmobWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -184,25 +298,34 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = 17748AE82EDDD416003EF960;
 					};
+					17748B292EDDDAE0003EF960 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
-			buildConfigurationList = 17748AE42EDDD415003EF960 /* Build configuration list for PBXProject "admob tracker" */;
+			buildConfigurationList = 17748AE42EDDD415003EF960 /* Build configuration list for PBXProject "MobTracker" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 17748AE02EDDD415003EF960;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				17CC0CB52EDEF58700E584F0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				17F090C62EE08E3900A29D01 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17748AEA2EDDD416003EF960 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17748AE82EDDD416003EF960 /* admob tracker */,
-				17748AF72EDDD416003EF960 /* admob trackerTests */,
-				17748B012EDDD416003EF960 /* admob trackerUITests */,
+				17748AE82EDDD416003EF960 /* MobTracker */,
+				17748AF72EDDD416003EF960 /* MobTrackerTests */,
+				17748B012EDDD416003EF960 /* MobTrackerUITests */,
+				17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +346,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		17748B002EDDD416003EF960 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17748B282EDDDAE0003EF960 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,18 +383,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17748B262EDDDAE0003EF960 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		17748AFA2EDDD416003EF960 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17748AE82EDDD416003EF960 /* admob tracker */;
+			target = 17748AE82EDDD416003EF960 /* MobTracker */;
 			targetProxy = 17748AF92EDDD416003EF960 /* PBXContainerItemProxy */;
 		};
 		17748B042EDDD416003EF960 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17748AE82EDDD416003EF960 /* admob tracker */;
+			target = 17748AE82EDDD416003EF960 /* MobTracker */;
 			targetProxy = 17748B032EDDD416003EF960 /* PBXContainerItemProxy */;
+		};
+		17748B3F2EDDDAE1003EF960 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */;
+			targetProxy = 17748B3E2EDDDAE1003EF960 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,11 +537,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "admob tracker/admob tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6RBTM76JWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "admob-tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -423,11 +567,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "admob tracker/admob tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6RBTM76JWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "admob-tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,7 +607,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/admob tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/admob tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MobTracker";
 			};
 			name = Debug;
 		};
@@ -480,7 +626,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/admob tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/admob tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MobTracker";
 			};
 			name = Release;
 		};
@@ -518,10 +664,66 @@
 			};
 			name = Release;
 		};
+		17748B422EDDDAE2003EF960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AdmobWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6RBTM76JWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdmobWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AdmobWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JunHyuk.admob-tracker.AdmobWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17748B432EDDDAE2003EF960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AdmobWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6RBTM76JWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdmobWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AdmobWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JunHyuk.admob-tracker.AdmobWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17748AE42EDDD415003EF960 /* Build configuration list for PBXProject "admob tracker" */ = {
+		17748AE42EDDD415003EF960 /* Build configuration list for PBXProject "MobTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17748B0A2EDDD416003EF960 /* Debug */,
@@ -530,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17748B0C2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob tracker" */ = {
+		17748B0C2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17748B0D2EDDD416003EF960 /* Debug */,
@@ -539,7 +741,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17748B0F2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob trackerTests" */ = {
+		17748B0F2EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17748B102EDDD416003EF960 /* Debug */,
@@ -548,7 +750,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17748B122EDDD416003EF960 /* Build configuration list for PBXNativeTarget "admob trackerUITests" */ = {
+		17748B122EDDD416003EF960 /* Build configuration list for PBXNativeTarget "MobTrackerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17748B132EDDD416003EF960 /* Debug */,
@@ -557,7 +759,48 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		17748B412EDDDAE2003EF960 /* Build configuration list for PBXNativeTarget "AdmobWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17748B422EDDDAE2003EF960 /* Debug */,
+				17748B432EDDDAE2003EF960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17CC0CB52EDEF58700E584F0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		17F090C62EE08E3900A29D01 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17CC0CBA2EDF1F9400E584F0 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17CC0CB52EDEF58700E584F0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		17F090C72EE08E3900A29D01 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17F090C62EE08E3900A29D01 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17748AE12EDDD415003EF960 /* Project object */;
 }
