@@ -8,7 +8,7 @@ class InterstitialAdManager: NSObject, ObservableObject {
     // Test Ad Unit ID (replace with real one for production)
     private let adUnitID = "ca-app-pub-3940256099942544/4411468910"
     
-    private var interstitialAd: GADInterstitialAd?
+    private var interstitialAd: InterstitialAd?
     @Published var isAdReady = false
     
     // Swipe counter
@@ -25,8 +25,8 @@ class InterstitialAdManager: NSObject, ObservableObject {
     // MARK: - Load Ad
     
     func loadAd() {
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) { [weak self] ad, error in
+        let request = Request()
+        InterstitialAd.load(with: adUnitID, request: request) { [weak self] ad, error in
             if let error = error {
                 print("Failed to load interstitial ad: \(error.localizedDescription)")
                 self?.isAdReady = false
@@ -70,7 +70,7 @@ class InterstitialAdManager: NSObject, ObservableObject {
             return
         }
         
-        interstitialAd.present(fromRootViewController: rootViewController)
+        interstitialAd.present(from: rootViewController)
         adsShownCount += 1
         print("Interstitial ad shown. Total ads shown: \(adsShownCount)")
         
