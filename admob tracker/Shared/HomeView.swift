@@ -92,13 +92,10 @@ struct HomeView: View {
                             StatCard(title: "eCPM", value: ecpm, color: .admobGreen)
                         }
                         
-                        // Banner Ad (Replaces Native Ad)
+                        // Banner Ad
                         BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
-                            .frame(height: 50) // Standard Banner Height
+                            .frame(height: 50)
                             .frame(maxWidth: .infinity)
-                            .background(Color.slate800)
-                            .cornerRadius(16)
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 4)
                         
                         // Revenue Chart (Current vs Previous Month)
                         RevenueChartView()

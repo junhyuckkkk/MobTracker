@@ -36,9 +36,6 @@ struct admob_trackerApp: App {
                     if scenePhase == .active {
                         print("App became active, refreshing data...")
                         DataService.shared.refreshData()
-                        
-                        // Show App Open Ad (with conditions)
-                        AppOpenAdManager.shared.showAdIfAvailable()
                     }
                 }
         }

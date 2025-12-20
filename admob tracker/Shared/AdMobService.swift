@@ -10,12 +10,16 @@ class AdMobService: NSObject, ObservableObject {
     private var rewardedAd: RewardedAd?
     private var pendingCompletion: (() -> Void)?
     
-    // Test ID: ca-app-pub-3940256099942544/1712485313
-    // TODO: Replace with Real Ad Unit ID before Archive!
+    // Ad Unit IDs with conditional compilation
+    #if DEBUG
+    // Test Ad Unit IDs (for development)
     let adUnitID = "ca-app-pub-3940256099942544/1712485313"
-    
-    // Banner Ad Unit ID (Real)
+    let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    #else
+    // Real Ad Unit IDs (for production)
+    let adUnitID = "ca-app-pub-9373931451334451/REWARDED_AD_ID_HERE"  // TODO: Add real rewarded ad ID
     let bannerAdUnitID = "ca-app-pub-9373931451334451/1661943672"
+    #endif
     
     override init() {
         super.init()
