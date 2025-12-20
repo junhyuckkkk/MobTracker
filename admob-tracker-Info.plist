@@ -23,5 +23,7 @@
 	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9373931451334451~8223660201</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>
