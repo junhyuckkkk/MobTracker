@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import admob_tracker
+@testable import MobTracker
 
 final class admob_trackerTests: XCTestCase {
 

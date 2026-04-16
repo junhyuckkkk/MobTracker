@@ -70,7 +70,7 @@
 			);
 			target = 17748B292EDDDAE0003EF960 /* AdmobWidgetExtension */;
 		};
-		17748B492EDDDC50003EF960 /* Exceptions for "admob tracker" folder in "AdmobWidgetExtension" target */ = {
+		17748B492EDDDC50003EF960 /* Exceptions for "MobTracker" folder in "AdmobWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Shared/AdMobAPI.swift,
@@ -83,22 +83,22 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		17748AEB2EDDD416003EF960 /* admob tracker */ = {
+		17748AEB2EDDD416003EF960 /* MobTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				17748B492EDDDC50003EF960 /* Exceptions for "admob tracker" folder in "AdmobWidgetExtension" target */,
+				17748B492EDDDC50003EF960 /* Exceptions for "MobTracker" folder in "AdmobWidgetExtension" target */,
 			);
-			path = "admob tracker";
+			path = MobTracker;
 			sourceTree = "<group>";
 		};
-		17748AFB2EDDD416003EF960 /* admob trackerTests */ = {
+		17748AFB2EDDD416003EF960 /* MobTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "admob trackerTests";
+			path = MobTrackerTests;
 			sourceTree = "<group>";
 		};
-		17748B052EDDD416003EF960 /* admob trackerUITests */ = {
+		17748B052EDDD416003EF960 /* MobTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "admob trackerUITests";
+			path = MobTrackerUITests;
 			sourceTree = "<group>";
 		};
 		17748B302EDDDAE1003EF960 /* AdmobWidget */ = {
@@ -151,9 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				17CC0CBD2EDF26FE00E584F0 /* AdmobWidgetExtension.entitlements */,
-				17748AEB2EDDD416003EF960 /* admob tracker */,
-				17748AFB2EDDD416003EF960 /* admob trackerTests */,
-				17748B052EDDD416003EF960 /* admob trackerUITests */,
+				17748AEB2EDDD416003EF960 /* MobTracker */,
+				17748AFB2EDDD416003EF960 /* MobTrackerTests */,
+				17748B052EDDD416003EF960 /* MobTrackerUITests */,
 				17748B302EDDDAE1003EF960 /* AdmobWidget */,
 				17748B2B2EDDDAE1003EF960 /* Frameworks */,
 				17748AEA2EDDD416003EF960 /* Products */,
@@ -198,7 +198,7 @@
 				17748B3F2EDDDAE1003EF960 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				17748AEB2EDDD416003EF960 /* admob tracker */,
+				17748AEB2EDDD416003EF960 /* MobTracker */,
 			);
 			name = MobTracker;
 			packageProductDependencies = (
@@ -223,12 +223,12 @@
 				17748AFA2EDDD416003EF960 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				17748AFB2EDDD416003EF960 /* admob trackerTests */,
+				17748AFB2EDDD416003EF960 /* MobTrackerTests */,
 			);
 			name = MobTrackerTests;
 			packageProductDependencies = (
 			);
-			productName = "admob trackerTests";
+			productName = MobTrackerTests;
 			productReference = 17748AF82EDDD416003EF960 /* MobTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -246,7 +246,7 @@
 				17748B042EDDD416003EF960 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				17748B052EDDD416003EF960 /* admob trackerUITests */,
+				17748B052EDDD416003EF960 /* MobTrackerUITests */,
 			);
 			name = MobTrackerUITests;
 			packageProductDependencies = (
@@ -537,13 +537,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "admob tracker/admob tracker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "MobTracker/admob tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6RBTM76JWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "admob-tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MobTracker;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -553,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JunHyuk.admob-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -567,13 +569,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "admob tracker/admob tracker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "MobTracker/admob tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6RBTM76JWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "admob-tracker-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MobTracker;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JunHyuk.admob-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

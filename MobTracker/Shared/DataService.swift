@@ -50,6 +50,47 @@ class DataService: ObservableObject {
     }
     
     func refreshData(completion: (() -> Void)? = nil) {
+        // Snapshot Mode: Provide Mock Data
+        if CommandLine.arguments.contains("--snapshot") {
+            let mockData = EarningData(
+                today: 125.50,
+                yesterday: 98.20,
+                thisMonth: 1250.00,
+                lastMonth: 3400.50,
+                thisYear: 15400.00,
+                lastYear: 45000.00,
+                todayImpressions: 1540,
+                lastUpdated: Date()
+            )
+            
+            // Generate some mock daily earnings specifically valid for "this month" to populate charts
+            // This is a simplified example, populating current month days
+            var mockDaily: [String: Double] = [:]
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month], from: Date())
+            if let startOfMonth = calendar.date(from: components),
+               let range = calendar.range(of: .day, in: .month, for: startOfMonth) {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyyMMdd"
+                
+                for day in 1...min(range.count, 31) { // Populate full month
+                   if let date = calendar.date(byAdding: .day, value: day - 1, to: startOfMonth) {
+                       let key = dateFormatter.string(from: date)
+                       mockDaily[key] = Double.random(in: 50...150)
+                   }
+                }
+            }
+            
+            self.currentEarnings = mockData
+            self.dailyEarnings = mockDaily
+            self.saveDataToSharedStorage(data: mockData)
+            self.saveDailyEarningsToSharedStorage(map: mockDaily)
+            WidgetCenter.shared.reloadAllTimelines()
+            completion?()
+            return
+        }
+        
         // Check if user is logged in
         guard let publisherId = AuthService.shared.publisherId,
               let accessToken = AuthService.shared.accessToken else {

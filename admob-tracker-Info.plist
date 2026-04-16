@@ -15,12 +15,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleDisplayName</key>
-	<string>MobTracker</string>
-	<key>CFBundleName</key>
-	<string>MobTracker</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9373931451334451~8223660201</string>
 </dict>

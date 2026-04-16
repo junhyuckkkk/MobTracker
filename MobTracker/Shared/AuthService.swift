@@ -22,7 +22,24 @@ class AuthService: ObservableObject {
     private let additionalScopes = ["https://www.googleapis.com/auth/admob.readonly"]
     
     init() {
-        restoreSession()
+        if CommandLine.arguments.contains("--snapshot") {
+            setupSnapshotState()
+        } else {
+            restoreSession()
+        }
+    }
+    
+    private func setupSnapshotState() {
+        print("📸 Snapshot mode detected! Skipping login...")
+        self.isAuthenticated = true
+        self.userEmail = "demo@example.com"
+        self.accessToken = "mock_token_for_snapshot"
+        self.publisherId = "pub-3940256099942544"
+        
+        // Mock data initialization if needed
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DataService.shared.refreshData()
+        }
     }
     
     func restoreSession() {

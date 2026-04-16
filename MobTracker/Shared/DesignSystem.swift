@@ -43,7 +43,7 @@ extension Color {
 }
 
 struct DesignSystem {
-    static let appGroupIdentifier = "group.com.example.admob" // User needs to configure this
+    static let appGroupIdentifier = "group.com.JunHyuk.admob-tracker" // Corrected App Group ID
 }
 
 class HapticManager {

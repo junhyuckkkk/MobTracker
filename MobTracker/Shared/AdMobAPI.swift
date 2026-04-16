@@ -125,13 +125,16 @@ class AdMobAPI {
                             // Earnings
                             if let earningsMicrosStr = metricValues["ESTIMATED_EARNINGS"]?["microsValue"] as? String,
                                let micros = Double(earningsMicrosStr) {
-                                earningsMap[dateValue] = micros / 1_000_000.0
+                                // Normalize Date (Remove - or / if present)
+                                let normalizedDate = dateValue.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "/", with: "")
+                                earningsMap[normalizedDate] = micros / 1_000_000.0
                             }
                             
                             // Impressions
                             if let impressionsStr = metricValues["IMPRESSIONS"]?["integerValue"] as? String,
                                let impressions = Int(impressionsStr) {
-                                impressionsMap[dateValue] = impressions
+                                let normalizedDate = dateValue.replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "/", with: "")
+                                impressionsMap[normalizedDate] = impressions
                             }
                         }
                     }
