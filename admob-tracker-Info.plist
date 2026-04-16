@@ -11,11 +11,19 @@
 			<string>clientid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.624953458678-0eomb4k8oiie2is4tekp8hvhrcvr19uh</string>
+				<string>com.googleusercontent.apps.$(GOOGLE_CLIENT_ID)</string>
 			</array>
 		</dict>
 	</array>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-9373931451334451~8223660201</string>
+	<string>$(ADMOB_APP_ID)</string>
+	<key>GOOGLE_CLIENT_ID</key>
+	<string>$(GOOGLE_CLIENT_ID)</string>
+	<key>ADMOB_BANNER_ID</key>
+	<string>$(ADMOB_BANNER_ID)</string>
+	<key>ADMOB_INTERSTITIAL_ID</key>
+	<string>$(ADMOB_INTERSTITIAL_ID)</string>
+	<key>ADMOB_REWARDED_ID</key>
+	<string>$(ADMOB_REWARDED_ID)</string>
 </dict>
 </plist>

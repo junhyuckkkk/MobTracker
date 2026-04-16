@@ -5,11 +5,11 @@ import SwiftUI
 class InterstitialAdManager: NSObject, ObservableObject {
     static let shared = InterstitialAdManager()
     
-    // Interstitial Ad Unit ID with conditional compilation
+    // Interstitial Ad Unit ID - reads from Info.plist in production (set via Secrets.xcconfig)
     #if DEBUG
-    private let adUnitID = "ca-app-pub-3940256099942544/4411468910"  // Test
+    private let adUnitID = "ca-app-pub-3940256099942544/4411468910"
     #else
-    private let adUnitID = "ca-app-pub-9373931451334451/5146511669"  // Real
+    private let adUnitID: String = Bundle.main.object(forInfoDictionaryKey: "ADMOB_INTERSTITIAL_ID") as? String ?? ""
     #endif
     
     private var interstitialAd: InterstitialAd?

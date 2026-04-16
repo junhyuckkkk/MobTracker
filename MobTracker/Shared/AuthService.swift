@@ -17,8 +17,8 @@ class AuthService: ObservableObject {
     
     private let userDefaults = UserDefaults(suiteName: DesignSystem.appGroupIdentifier)
     
-    // Configuration
-    private let clientID = "624953458678-0eomb4k8oiie2is4tekp8hvhrcvr19uh.apps.googleusercontent.com"
+    // Configuration - reads from Info.plist (set via Secrets.xcconfig)
+    private let clientID: String = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_CLIENT_ID") as? String ?? ""
     private let additionalScopes = ["https://www.googleapis.com/auth/admob.readonly"]
     
     init() {

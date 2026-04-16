@@ -10,15 +10,13 @@ class AdMobService: NSObject, ObservableObject {
     private var rewardedAd: RewardedAd?
     private var pendingCompletion: (() -> Void)?
     
-    // Ad Unit IDs with conditional compilation
+    // Ad Unit IDs - reads from Info.plist in production (set via Secrets.xcconfig)
     #if DEBUG
-    // Test Ad Unit IDs (for development)
     let adUnitID = "ca-app-pub-3940256099942544/1712485313"
     let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
     #else
-    // Real Ad Unit IDs (for production)
-    let adUnitID = "ca-app-pub-9373931451334451/REWARDED_AD_ID_HERE"  // TODO: Add real rewarded ad ID
-    let bannerAdUnitID = "ca-app-pub-9373931451334451/1661943672"
+    let adUnitID: String = Bundle.main.object(forInfoDictionaryKey: "ADMOB_REWARDED_ID") as? String ?? ""
+    let bannerAdUnitID: String = Bundle.main.object(forInfoDictionaryKey: "ADMOB_BANNER_ID") as? String ?? ""
     #endif
     
     override init() {
