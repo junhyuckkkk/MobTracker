@@ -11,7 +11,7 @@
 			<string>clientid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.$(GOOGLE_CLIENT_ID)</string>
+				<string>com.googleusercontent.apps.$(GOOGLE_REVERSED_CLIENT_ID)</string>
 			</array>
 		</dict>
 	</array>
