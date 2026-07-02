@@ -108,10 +108,12 @@ struct HomeView: View {
                             StatCard(title: "eCPM", value: ecpm, color: .admobGreen)
                         }
                         
-                        // Banner Ad
-                        BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
-                            .frame(height: 50)
-                            .frame(maxWidth: .infinity)
+                        // Banner Ad (hidden during screenshot automation)
+                        if !CommandLine.arguments.contains("--snapshot") {
+                            BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
+                                .frame(height: 50)
+                                .frame(maxWidth: .infinity)
+                        }
                         
                         // Revenue Chart (Current vs Previous Month)
                         RevenueChartView()

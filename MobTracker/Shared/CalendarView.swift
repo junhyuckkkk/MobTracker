@@ -143,12 +143,14 @@ struct CalendarView: View {
                     interstitialAdManager.trackSwipe()
                 }
                 
-                // Banner Ad at Bottom
-                BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .padding(.top, 8)
+                // Banner Ad at Bottom (hidden during screenshot automation)
+                if !CommandLine.arguments.contains("--snapshot") {
+                    BannerAdWidget(adUnitID: AdMobService.shared.bannerAdUnitID)
+                        .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .padding(.top, 8)
+                }
                 
                 Spacer()
             }
