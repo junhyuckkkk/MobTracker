@@ -10,6 +10,7 @@ class AuthService: ObservableObject {
     static let shared = AuthService()
     
     @Published var isAuthenticated: Bool = false
+    @Published var isDemoMode: Bool = false
     @Published var userEmail: String?
     @Published var accessToken: String?
     @Published var publisherId: String? // Will be fetched or manually entered
@@ -29,8 +30,18 @@ class AuthService: ObservableObject {
         }
     }
     
+    // Demo mode for App Store review: full UI with sample data, no Google account needed.
+    // Not persisted — relaunching the app returns to the login screen.
+    func enterDemoMode() {
+        self.isDemoMode = true
+        self.isAuthenticated = true
+        self.userEmail = "demo@example.com"
+        DataService.shared.refreshData()
+    }
+
     private func setupSnapshotState() {
         print("📸 Snapshot mode detected! Skipping login...")
+        self.isDemoMode = true
         self.isAuthenticated = true
         self.userEmail = "demo@example.com"
         self.accessToken = "mock_token_for_snapshot"
@@ -100,9 +111,10 @@ class AuthService: ObservableObject {
         #endif
         
         self.isAuthenticated = false
+        self.isDemoMode = false
         self.accessToken = nil
         self.userEmail = nil
-        
+
         userDefaults?.removeObject(forKey: "mock_access_token")
         userDefaults?.removeObject(forKey: "mock_user_email")
         // We might want to keep publisher ID or force re-fetch

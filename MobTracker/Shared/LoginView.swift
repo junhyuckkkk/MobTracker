@@ -41,7 +41,24 @@ struct LoginView: View {
                 .cornerRadius(12)
             }
             .padding(.horizontal, 40)
-            
+
+            // Demo Mode Button (browse with sample data, no account needed)
+            Button(action: {
+                authService.enterDemoMode()
+            }) {
+                HStack {
+                    Image(systemName: "eye")
+                    Text("demo_mode_button")
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.slate800)
+                .cornerRadius(12)
+            }
+            .padding(.horizontal, 40)
+
             Text("login_disclaimer")
                 .font(.caption)
                 .foregroundColor(.slate400)

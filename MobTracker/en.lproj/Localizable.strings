@@ -12,6 +12,9 @@
 "sign_in_google" = "Sign in with Google";
 "app_subtitle" = "Track your earnings in real-time";
 "login_disclaimer" = "By signing in, you allow this app to read your AdMob earnings data.";
+"demo_mode_button" = "Browse in Demo Mode";
+"demo_mode_notice" = "Demo Mode — showing sample data";
+"exit_demo_mode" = "Exit Demo Mode";
 "refresh_earnings" = "Refresh Earnings";
 "vs_yesterday" = "vs yesterday";
 
@@ -43,6 +46,9 @@
 "widget_locked_desc" = "Activate Boost Mode to see real-time earnings";
 "total_year" = "Total %@";
 "vs_prev_year" = "vs %@";
+"all_time_revenue" = "All-Time Revenue";
+"last_year_performance" = "Last Year";
+"last_year_total" = "Total %@";
 
 /* Notifications */
 "notification_title" = "📊 Check Today's Earnings";

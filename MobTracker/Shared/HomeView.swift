@@ -77,7 +77,23 @@ struct HomeView: View {
                         
                         // Annual Revenue (New)
                         TotalRevenueCard()
-                        
+
+                        // All-Time + Last Year Highlights
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                            HighlightCard(
+                                title: NSLocalizedString("all_time_revenue", comment: ""),
+                                icon: "infinity",
+                                value: dataService.currentEarnings.allTime,
+                                accent: .admobYellow
+                            )
+                            HighlightCard(
+                                title: NSLocalizedString("last_year_performance", comment: ""),
+                                icon: "calendar",
+                                value: dataService.currentEarnings.lastYear,
+                                accent: .admobBlue
+                            )
+                        }
+
                         // Stats Grid
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                             StatCard(title: NSLocalizedString("yesterday", comment: ""), value: dataService.currentEarnings.yesterday, color: .slate400)
@@ -139,6 +155,37 @@ struct StatCard: View {
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundColor(color)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(16)
+        .background(Color.slate800)
+        .cornerRadius(12)
+    }
+}
+
+// Highlight Card (All-Time / Last Year)
+struct HighlightCard: View {
+    let title: String
+    let icon: String
+    let value: Double
+    let accent: Color
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.caption)
+                    .foregroundColor(accent)
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(.slate400)
+            }
+
+            Text(String(format: "$%.2f", value))
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+                .minimumScaleFactor(0.7)
+                .lineLimit(1)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)

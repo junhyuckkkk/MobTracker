@@ -46,11 +46,26 @@ struct MenuView: View {
                         .cornerRadius(12)
                     }
                     
-                    // Logout
+                    // Demo Mode Notice
+                    if authService.isDemoMode {
+                        HStack(spacing: 12) {
+                            Image(systemName: "eye")
+                                .foregroundColor(.admobBlue)
+                            Text("demo_mode_notice")
+                                .font(.caption)
+                                .foregroundColor(.slate400)
+                            Spacer()
+                        }
+                        .padding()
+                        .background(Color.slate800)
+                        .cornerRadius(12)
+                    }
+
+                    // Logout / Exit Demo
                     Button(action: {
                         authService.signOut()
                     }) {
-                        Text("logout")
+                        Text(authService.isDemoMode ? LocalizedStringKey("exit_demo_mode") : LocalizedStringKey("logout"))
                             .font(.headline)
                             .foregroundColor(.red)
                             .padding()

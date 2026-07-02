@@ -138,7 +138,7 @@ struct CalendarView: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .onChange(of: currentPageIndex) {
+                .onChange(of: currentPageIndex) { _ in
                     // Track swipe for interstitial ad
                     interstitialAdManager.trackSwipe()
                 }

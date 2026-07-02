@@ -32,8 +32,8 @@ struct admob_trackerApp: App {
                     GIDSignIn.sharedInstance.handle(url)
                     #endif
                 }
-                .onChange(of: scenePhase) {
-                    if scenePhase == .active {
+                .onChange(of: scenePhase) { newPhase in
+                    if newPhase == .active {
                         print("App became active, refreshing data...")
                         DataService.shared.refreshData()
                     }

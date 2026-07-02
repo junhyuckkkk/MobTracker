@@ -76,8 +76,8 @@ struct ContentView: View {
             }
         }
         .animation(.easeInOut, value: authService.isAuthenticated)
-        .onChange(of: authService.isAuthenticated) {
-            if authService.isAuthenticated {
+        .onChange(of: authService.isAuthenticated) { isAuth in
+            if isAuth {
                 selection = 0
             }
         }

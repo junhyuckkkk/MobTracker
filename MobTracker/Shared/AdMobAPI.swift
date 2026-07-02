@@ -190,28 +190,32 @@ class AdMobAPI {
         // Annual Data Calculation
         var thisYearEarnings = 0.0
         var lastYearEarnings = 0.0
+        var allTimeEarnings = 0.0
         let lastYearInt = (currentComponents.year ?? 2024) - 1
-        
+
         for (dateStr, amount) in earningsMap {
             if let date = dateFormatter.date(from: dateStr) {
                 let components = calendar.dateComponents([.year, .month], from: date)
-                
+
                 // Monthly logic
                 if components.year == currentComponents.year && components.month == currentComponents.month {
                     thisMonthEarnings += amount
                 } else if components.year == lastMonthComponents.year && components.month == lastMonthComponents.month {
                     lastMonthEarnings += amount
                 }
-                
+
                 // Yearly logic
                 if components.year == currentComponents.year {
                     thisYearEarnings += amount
                 } else if components.year == lastYearInt {
                     lastYearEarnings += amount
                 }
+
+                // Lifetime total
+                allTimeEarnings += amount
             }
         }
-        
+
         return EarningData(
             today: todayEarnings,
             yesterday: yesterdayEarnings,
@@ -219,6 +223,7 @@ class AdMobAPI {
             lastMonth: lastMonthEarnings,
             thisYear: thisYearEarnings,
             lastYear: lastYearEarnings,
+            allTime: allTimeEarnings,
             todayImpressions: todayImpressions,
             lastUpdated: Date()
         )

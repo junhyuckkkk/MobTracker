@@ -12,6 +12,9 @@
 "sign_in_google" = "Google로 로그인";
 "app_subtitle" = "실시간으로 수익을 확인하세요";
 "login_disclaimer" = "로그인하면 앱이 AdMob 수익 데이터를 읽을 수 있도록 허용하게 됩니다.";
+"demo_mode_button" = "데모 모드로 둘러보기";
+"demo_mode_notice" = "데모 모드 — 샘플 데이터입니다";
+"exit_demo_mode" = "데모 모드 종료";
 "refresh_earnings" = "수익 새로고침";
 "vs_yesterday" = "어제 대비";
 
@@ -43,6 +46,9 @@
 "widget_locked_desc" = "부스트 모드를 활성화해서 실시간 수익을 확인하세요";
 "total_year" = "%@년 합계";
 "vs_prev_year" = "%@년 대비";
+"all_time_revenue" = "전체 기간 수익";
+"last_year_performance" = "전년도 실적";
+"last_year_total" = "%@년 총 수익";
 
 /* Notifications */
 "notification_title" = "📊 오늘의 수익 확인";
